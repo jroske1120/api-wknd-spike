@@ -4,8 +4,8 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 // Route includes
-const favoriteRouter = require('./routes/favorite.router');
-const searchRouter = require('./routes/search.router');
+const searchAllRouter = require('./routes/searchAll');
+const searchFTRouter = require('./routes/searchFullText.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('build'));
 
 /* Routes */
-app.use('/api/favorite', favoriteRouter);
-app.use('/api/search', searchRouter);
+app.use('/api/searchAll', searchAllRouter);
+app.use('/api/searchFullText', searchFTRouter);
 
 // App Set //
 const PORT = process.env.PORT || 5000;

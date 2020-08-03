@@ -1,11 +1,8 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const {default: Axios} = require('axios');
-console.log('api key', process.env.API_KEY);
 
 const router = express.Router();
-
-console.log('api key:', process.env.API_KEY)
 
 router.get('/', (req, res) => {
   console.log('hit server', req.query.search);

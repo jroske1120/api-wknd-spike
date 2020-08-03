@@ -46,13 +46,6 @@ class BookSearch extends Component {
     })
   }
 
-  addToFavorites = (event, imgSrc) => {
-    event.preventDefault();
-    console.log('in click with:', imgSrc);
-    this.props.dispatch({ type: "ADD_FAVORITE", payload: imgSrc })
-  }
-
-
   render() {
     const { classes } = this.props;
     return (
