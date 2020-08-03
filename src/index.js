@@ -21,7 +21,7 @@ function* getGiphySaga(action){
     // get request that sends search query
     const response = yield axios.get('/api/search', {params: {search: action.payload}})
     // data.data to access the array of objects (reponse.data returns an array of an array of objects)
-    yield put({type:"SET_IMAGE", payload: response.data.data})
+    yield put({type:"SET_IMAGE", payload: response.data.items})
   } catch (error) {
     console.log('issue with search saga:', error)
   }
